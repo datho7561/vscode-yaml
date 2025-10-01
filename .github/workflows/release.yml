@@ -74,7 +74,7 @@ jobs:
           node-version: 20
       - name: Set version to prerelease version
         run: |
-          node change-version-to-prerelease.mjs
+          node ./scripts/change-version-to-prerelease.mjs
           echo "publishPreReleaseFlag=--pre-release" >> $GITHUB_ENV
         if: ${{ github.event_name == 'schedule' || inputs.publishPreRelease == 'true'}}
       - name: Install dependencies
